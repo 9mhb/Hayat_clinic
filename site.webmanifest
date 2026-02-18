@@ -1,0 +1,23 @@
+{
+  "name": "عيادات حياة - Hayat Clinics",
+  "short_name": "Hayat",
+  "description": "Premium dermatology, cosmetics & dental clinic in Riyadh",
+  "icons": [
+    {
+      "src": "assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#5C6B52",
+  "background_color": "#F9F7F2",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "ar",
+  "dir": "rtl"
+}
