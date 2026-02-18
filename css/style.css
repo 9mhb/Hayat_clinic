@@ -415,6 +415,8 @@ html[dir="ltr"] .navbar__link::after {
   display: flex;
   align-items: center;
   gap: 16px;
+  position: relative;
+  z-index: 1001;
 }
 
 .lang-toggle {
@@ -482,33 +484,40 @@ html[dir="ltr"] .navbar__link::after {
 
   .navbar__nav {
     position: fixed;
-    top: var(--nav-height);
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(249, 247, 242, 0.98);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--color-cream);
+    z-index: 999;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition);
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   .navbar__nav.open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .navbar__links {
     flex-direction: column;
-    gap: 24px;
+    align-items: center;
+    gap: 28px;
   }
 
   .navbar__link {
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: 600;
   }
 }
 
