@@ -575,10 +575,11 @@
   /* ---------- AOS Init ---------- */
   function initAOS() {
     if (typeof AOS === 'undefined') return;
+    document.body.classList.add('aos-ready');
     AOS.init({
-      duration: 800,
+      duration: 700,
       once: true,
-      offset: 80,
+      offset: 60,
       easing: 'ease-out-cubic',
     });
   }
@@ -616,13 +617,11 @@
       window.addEventListener('load', tryInitLibraries);
     }
 
-    // Hide loader
-    window.addEventListener('load', () => {
-      setTimeout(hideLoader, 300);
-    });
+    // Hide loader immediately on DOMContentLoaded, don't wait for all images
+    hideLoader();
 
-    // Fallback: hide loader after 3s max
-    setTimeout(hideLoader, 3000);
+    // Fallback in case called before DOM ready
+    window.addEventListener('load', hideLoader);
   }
 
   // Run on DOM ready
